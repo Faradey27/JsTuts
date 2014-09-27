@@ -1,0 +1,40 @@
+{
+  "name": "MoW-IVD",
+  "version": "0.0.2",
+  "description": "mow-ivd",
+  "repository": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/js/bower_components"
+  ],
+  "main": "src/index.js",
+  "dependencies": {
+    "jquery": "^2.1.1",
+    "jquery-ui": "^1.10.5",
+    "lodash": "*",
+    "mousetrap":"*",
+    "bootstrap": "*",
+    "font-awesome": "*",
+    "bootstrap":"*",
+    "font-awesome": "*",
+    "q": "2.*",
+    "react": "^0.11.0",
+    "react-bootstrap": "*",
+    "uuid": "^1.4.1"
+  },
+  "devDependencies": {
+    "traceur-loader": "0.3.*",
+    "jsx-loader": "*",
+    "webpack": "*",
+    "url-loader": "*",
+    "css-loader": "*",
+    "jshint-loader": "*",
+    "style-loader": "*",
+    "json-loader": "*",
+    "less-loader": "*"
+  },
+  "scripts": {
+    "start": "webpack -d --watch --colors  src/main.js"
+  }
+}
