@@ -3,20 +3,143 @@
 2 info using npm@1.4.28
 3 info using node@v0.10.32
 4 verbose node symlink /usr/bin/node
-5 error install Couldn't read dependencies
-6 error Failed to parse json
-6 error Unexpected string
-7 error File: /home/faradey/jslern/package.json
-8 error Failed to parse package.json data.
-8 error package.json must be actual JSON, not just JavaScript.
-8 error
-8 error This is not a bug in npm.
-8 error Tell the package author to fix their package.json file. JSON.parse
-9 error System Linux 3.13.0-35-generic
-10 error command "/usr/bin/node" "/usr/bin/npm" "install"
-11 error cwd /home/faradey/jslern
-12 error node -v v0.10.32
-13 error npm -v 1.4.28
-14 error file /home/faradey/jslern/package.json
-15 error code EJSONPARSE
-16 verbose exit [ 1, true ]
+5 warn package.json JsTuts@0.0.2 No repository field.
+6 warn package.json JsTuts@0.0.2 No README data
+7 verbose readDependencies using package.json deps
+8 verbose install where, deps [ '/home/faradey/jslern',
+8 verbose install   [ 'jquery',
+8 verbose install     'lodash',
+8 verbose install     'mousetrap',
+8 verbose install     'mongojs',
+8 verbose install     'bootstrap',
+8 verbose install     'font-awesome',
+8 verbose install     'express',
+8 verbose install     'mongodb',
+8 verbose install     'Q',
+8 verbose install     'promise',
+8 verbose install     'promised-mongo',
+8 verbose install     'react',
+8 verbose install     'react-bootstrap',
+8 verbose install     'uuid',
+8 verbose install     'traceur-loader',
+8 verbose install     'jsx-loader',
+8 verbose install     'webpack',
+8 verbose install     'url-loader',
+8 verbose install     'css-loader',
+8 verbose install     'jshint-loader',
+8 verbose install     'style-loader',
+8 verbose install     'json-loader',
+8 verbose install     'less-loader' ] ]
+9 info preinstall JsTuts@0.0.2
+10 warn package.json jshint-loader@0.8.0 No repository field.
+11 verbose readDependencies using package.json deps
+12 verbose already installed skipping jquery@^2.1.1 /home/faradey/jslern
+13 verbose already installed skipping lodash@* /home/faradey/jslern
+14 verbose already installed skipping mousetrap@* /home/faradey/jslern
+15 verbose already installed skipping mongojs@* /home/faradey/jslern
+16 verbose already installed skipping bootstrap@* /home/faradey/jslern
+17 verbose already installed skipping font-awesome@* /home/faradey/jslern
+18 verbose already installed skipping express@* /home/faradey/jslern
+19 verbose already installed skipping mongodb@* /home/faradey/jslern
+20 verbose cache add [ 'Q@*', null ]
+21 verbose cache add name=undefined spec="Q@*" args=["Q@*",null]
+22 verbose parsed url { protocol: null,
+22 verbose parsed url   slashes: null,
+22 verbose parsed url   auth: null,
+22 verbose parsed url   host: null,
+22 verbose parsed url   port: null,
+22 verbose parsed url   hostname: null,
+22 verbose parsed url   hash: null,
+22 verbose parsed url   search: null,
+22 verbose parsed url   query: null,
+22 verbose parsed url   pathname: 'Q@*',
+22 verbose parsed url   path: 'Q@*',
+22 verbose parsed url   href: 'Q@*' }
+23 verbose already installed skipping promise@* /home/faradey/jslern
+24 verbose already installed skipping promised-mongo@* /home/faradey/jslern
+25 verbose cache add name="Q" spec="*" args=["Q","*"]
+26 verbose parsed url { protocol: null,
+26 verbose parsed url   slashes: null,
+26 verbose parsed url   auth: null,
+26 verbose parsed url   host: null,
+26 verbose parsed url   port: null,
+26 verbose parsed url   hostname: null,
+26 verbose parsed url   hash: null,
+26 verbose parsed url   search: null,
+26 verbose parsed url   query: null,
+26 verbose parsed url   pathname: '*',
+26 verbose parsed url   path: '*',
+26 verbose parsed url   href: '*' }
+27 verbose addNamed [ 'Q', '*' ]
+28 verbose addNamed [ null, '*' ]
+29 verbose already installed skipping react@^0.11.0 /home/faradey/jslern
+30 silly lockFile 6f0f215c-Q Q@*
+31 verbose lock Q@* /home/faradey/.npm/6f0f215c-Q.lock
+32 verbose already installed skipping react-bootstrap@* /home/faradey/jslern
+33 verbose already installed skipping uuid@^1.4.1 /home/faradey/jslern
+34 verbose already installed skipping traceur-loader@0.3.* /home/faradey/jslern
+35 verbose already installed skipping jsx-loader@* /home/faradey/jslern
+36 verbose already installed skipping webpack@* /home/faradey/jslern
+37 verbose already installed skipping url-loader@* /home/faradey/jslern
+38 verbose already installed skipping css-loader@* /home/faradey/jslern
+39 verbose already installed skipping jshint-loader@* /home/faradey/jslern
+40 verbose already installed skipping style-loader@* /home/faradey/jslern
+41 verbose already installed skipping json-loader@* /home/faradey/jslern
+42 verbose already installed skipping less-loader@* /home/faradey/jslern
+43 silly addNameRange { name: 'Q', range: '*', hasData: false }
+44 verbose request where is /Q
+45 verbose request registry https://registry.npmjs.org/
+46 verbose request id 82fab8b1a3406982
+47 verbose url raw /Q
+48 verbose url resolving [ 'https://registry.npmjs.org/', './Q' ]
+49 verbose url resolved https://registry.npmjs.org/Q
+50 verbose request where is https://registry.npmjs.org/Q
+51 info trying registry request attempt 1 at 13:17:27
+52 http GET https://registry.npmjs.org/Q
+53 http 404 https://registry.npmjs.org/Q
+54 verbose headers { date: 'Fri, 17 Oct 2014 10:17:29 GMT',
+54 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+54 verbose headers   'content-type': 'application/json',
+54 verbose headers   'cache-control': 'max-age=0',
+54 verbose headers   'content-length': '52',
+54 verbose headers   'accept-ranges': 'bytes',
+54 verbose headers   via: '1.1 varnish',
+54 verbose headers   age: '0',
+54 verbose headers   'x-served-by': 'cache-fra1232-FRA',
+54 verbose headers   'x-cache': 'MISS',
+54 verbose headers   'x-cache-hits': '0',
+54 verbose headers   'x-timer': 'S1413541049.029887,VS0,VE701',
+54 verbose headers   'keep-alive': 'timeout=10, max=50',
+54 verbose headers   connection: 'Keep-Alive' }
+55 silly registry.get cb [ 404,
+55 silly registry.get   { date: 'Fri, 17 Oct 2014 10:17:29 GMT',
+55 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+55 silly registry.get     'content-type': 'application/json',
+55 silly registry.get     'cache-control': 'max-age=0',
+55 silly registry.get     'content-length': '52',
+55 silly registry.get     'accept-ranges': 'bytes',
+55 silly registry.get     via: '1.1 varnish',
+55 silly registry.get     age: '0',
+55 silly registry.get     'x-served-by': 'cache-fra1232-FRA',
+55 silly registry.get     'x-cache': 'MISS',
+55 silly registry.get     'x-cache-hits': '0',
+55 silly registry.get     'x-timer': 'S1413541049.029887,VS0,VE701',
+55 silly registry.get     'keep-alive': 'timeout=10, max=50',
+55 silly registry.get     connection: 'Keep-Alive' } ]
+56 silly lockFile 6f0f215c-Q Q@*
+57 silly lockFile 6f0f215c-Q Q@*
+58 error 404 404 Not Found: Q
+58 error 404
+58 error 404 'Q' is not in the npm registry.
+58 error 404 You should bug the author to publish it
+58 error 404 It was specified as a dependency of 'JsTuts'
+58 error 404
+58 error 404 Note that you can also install from a
+58 error 404 tarball, folder, or http url, or git url.
+59 error System Linux 3.13.0-37-generic
+60 error command "/usr/bin/node" "/usr/bin/npm" "install"
+61 error cwd /home/faradey/jslern
+62 error node -v v0.10.32
+63 error npm -v 1.4.28
+64 error code E404
+65 verbose exit [ 1, true ]

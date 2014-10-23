@@ -1,5 +1,5 @@
 {
-  "name": "MoW-IVD",
+  "name": "JsTuts",
   "version": "0.0.2",
   "description": "mow-ivd",
   "repository": "",
@@ -11,14 +11,16 @@
   "main": "src/index.js",
   "dependencies": {
     "jquery": "^2.1.1",
-    "jquery-ui": "^1.10.5",
     "lodash": "*",
     "mousetrap":"*",
+    "mongojs":"*",
     "bootstrap": "*",
     "font-awesome": "*",
-    "bootstrap":"*",
-    "font-awesome": "*",
-    "q": "2.*",
+    "express": "*",
+    "mongodb": "*",
+    "q": "*",
+    "promise": "*",
+    "promised-mongo": "*",
     "react": "^0.11.0",
     "react-bootstrap": "*",
     "uuid": "^1.4.1"
