@@ -17,6 +17,10 @@ var ValidationField = React.createClass({
     };
   },
 
+  getText() {
+    return this.refs.field.getValue();
+  },
+
   validationState: function() {
     var length = this.state.value.length;
     if (length > 10) return 'success';
@@ -31,7 +35,7 @@ var ValidationField = React.createClass({
   },
 
   render: function() {
-    
+
     return (
         <Input
           type="text"

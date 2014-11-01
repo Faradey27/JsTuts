@@ -1,29 +1,22 @@
 var express = require('express'),
     app = express();
 
-var Router = require('./router.js');
 var DataBaseUtils = require('./DataBaseUtils.js');
 var dataBaseUtils = new DataBaseUtils();
+var bodyParser = require('body-parser');
 
-var user = {
-    email: "111@",
-    password: "vasa"
-}
-
-function callback () {
-    console.log('done')
-}
-
-dataBaseUtils.addNewUser(user, callback).then(function() {
-    dataBaseUtils.getAllUsers().then(function(data){
-        console.log(data)
-    })
+app.use(function(err, req, res, next){
+  res.send(500, 'Something broke!');
 });
-
-
-
-
+app.use(bodyParser());
 app.use(express.static(__dirname +'/../../'+ '/public'));
 app.use('/index', express.static(__dirname +'/../../'+ '/public'));
 
-app.listen(8080);
+app.post('/register', function(req, res) {
+    dataBaseUtils.addNewUser(req.body).then(function(d){
+        console.log('succes user adding');
+    });
+    res.send(req.body)
+});
+
+app.listen(8080, function() { console.log("Server is up and running");  });

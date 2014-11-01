@@ -13,16 +13,25 @@ require('./ButtonComponent.less');
 
 var ButtonComponent = React.createClass({
 
-  render: function() {
+    onButtonClick() {
+        if (this.props.onClick) {
+            this.props.onClick();
+        }
+    },
 
-    return (
-        <div className="ButtonComponent">
-            <ButtonToolbar>
-                <Button bsStyle={this.props.bsStyle}>{this.props.text}</Button>
-            </ButtonToolbar>
-        </div>
-    );
-  }
+    render: function() {
+
+        return (
+            <div className="ButtonComponent">
+                <ButtonToolbar>
+                    <Button bsStyle={this.props.bsStyle}
+                            onClick={this.onButtonClick}>
+                            {this.props.text}
+                    </Button>
+                </ButtonToolbar>
+            </div>
+        );
+    }
 });
 
 module.exports = ButtonComponent;
