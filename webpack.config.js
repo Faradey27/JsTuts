@@ -15,10 +15,14 @@ module.exports = {
             { test: /\.svg/, loader: "url-loader?limit=50000&mimetype=image/svg+xml" }
         ]
     },
+    entry: {
+        firstPage: "./src/Frontend/FirstPage/main.js"
+       // mainPage: "./src/new.js"
+    },
     output: {
-        path: __dirname + '/public/build/',
-        filename: "main.js",
-        publicPath: "build/"
+        path: __dirname + '/src/Backend/views/build/',
+        filename: "[name].bundle.js",
+        chunkFilename: "[id].chunk.js"
     },
     jshint: {
         // Env

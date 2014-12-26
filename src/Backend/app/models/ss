@@ -1,0 +1,13 @@
+{
+    _ID: (auto)
+    email: text,
+    password: text,
+    registerDate: date,
+    name: text,
+    surname: text,
+    birthday: date,
+    experiance: object,
+    friends: array of usersIds,
+    groups: array of groupIds,
+    courses: array of objets(courseId+progres)
+}

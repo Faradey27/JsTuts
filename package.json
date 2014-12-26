@@ -13,17 +13,30 @@
     "jquery": "^2.1.1",
     "lodash": "*",
     "mousetrap":"*",
-    "mongojs":"*",
     "bootstrap": "*",
     "font-awesome": "*",
-    "express": "*",
-    "mongodb": "*",
+    "consolidate": "*",
+    "mustache": "*",
     "q": "*",
-    "promise": "*",
-    "promised-mongo": "*",
     "react": "^0.11.0",
     "react-bootstrap": "*",
-    "uuid": "^1.4.1"
+    "uuid": "^1.4.1",
+    "express" : "~4.0.0",
+    "ejs" : "~0.8.5",
+    "mongoose" : "~3.8.1",
+    "passport" : "~0.1.17",
+    "passport-local" : "~0.1.6",
+    "passport-facebook" : "~1.0.2",
+    "passport-twitter" : "~1.0.2",
+    "jade":"*",
+    "passport-google-oauth" : "~0.1.5",
+    "connect-flash" : "~0.1.1",
+    "bcrypt-nodejs" : "latest",
+    "morgan": "~1.0.0",
+    "body-parser": "~1.0.0",
+    "cookie-parser": "~1.0.0",
+    "method-override": "~1.0.0",
+    "express-session": "~1.0.0"
   },
   "devDependencies": {
     "traceur-loader": "0.3.*",
@@ -31,12 +44,15 @@
     "webpack": "*",
     "url-loader": "*",
     "css-loader": "*",
+    "scroll-to": "*",
     "jshint-loader": "*",
     "style-loader": "*",
     "json-loader": "*",
+    "tween":"*",
+    "raf":"*",
     "less-loader": "*"
   },
   "scripts": {
-    "start": "webpack -d --watch --colors  src/main.js"
+    "start": "webpack -d --watch --colors"
   }
 }
