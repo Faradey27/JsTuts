@@ -14,6 +14,8 @@ var LoginDropDownList = require('./RegistrationDropDownList.jsx');
 
 require('./LoginPage.less');
 
+var ENTER = 13;
+
 var LoginPage = React.createClass({
 
     sendLoginData() {
@@ -21,6 +23,8 @@ var LoginPage = React.createClass({
             email: this.refs.login.getText(),
             password: this.refs.password.getText()
         };
+
+        var self = this;
 
         $.ajax({
             type: 'POST',
@@ -31,9 +35,18 @@ var LoginPage = React.createClass({
                 console.log(e);
             },
             success: function(e){
-                location.href='/profile';
+                if (self.props.update) {
+                    self.props.update();
+                }
+                //location.href='/profile';
             }
         });
+    },
+
+    keyDown: function(e) {
+        if (e.keyCode == ENTER) {
+            this.sendLoginData();
+        }
     },
 
     render: function() {
@@ -44,7 +57,10 @@ var LoginPage = React.createClass({
                              hide={this.props.hide}>
                             <div className="login">
                                 <ValidationField ref="login" placeholder="Email или Логин"/>
-                                <ValidationField ref="password" type="password" placeholder="Пароль"/>
+                                <ValidationField ref="password"
+                                                 type="password"
+                                                 onKeyDown={this.keyDown}
+                                                 placeholder="Пароль"/>
                                 <LoginButton bsStyle={"warning"}
                                                     onClick={this.sendLoginData}
                                                     text={"Войти"}/>

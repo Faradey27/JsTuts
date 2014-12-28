@@ -14,9 +14,9 @@ var BodyTextContent = React.createClass({
 
         return (
             <div ref="BodyTextContent" className='BodyTextContent'>
-                <span className="title">JsLern. Современный javascript.</span>
+                <span className="title">JsTuts. Современный javascript.</span>
                 <div className="content">
-                    <span>JsLern – это простой и эффективный способ изучить javascript.</span>
+                    <span>JsTuts – это простой и эффективный способ изучить javascript.</span>
                 </div>
             </div>
         );

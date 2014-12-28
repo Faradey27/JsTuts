@@ -20,7 +20,7 @@ var Registration = React.createClass({
             email: this.refs.login.getText(),
             password: this.refs.password.getText()
         };
-
+        var self = this;
         $.ajax({
             type: 'POST',
             data: user,
@@ -30,7 +30,10 @@ var Registration = React.createClass({
                 console.log(e);
             },
             success: function(e){
-                location.href='/profile';
+                if (self.props.update) {
+                    self.props.update();
+                }
+               // location.href='/profile';
             }
         });
     },

@@ -11,12 +11,10 @@ var configAuth = require('./auth'); // use this one for testing
 module.exports = function(passport) {
 
     passport.serializeUser(function(user, done) {
-        console.log(user);
         done(null, user.id);
     });
 
     passport.deserializeUser(function(id, done) {
-        console.log(id);
         User.findById(id, function(err, user) {
             done(err, user);
         });
@@ -34,17 +32,20 @@ module.exports = function(passport) {
 
         process.nextTick(function() {
 
-            User.findOne({ 'local.email' :  email }, function(err, user) {
+            User.findOne({ 'user.local.email' :  email }, function(err, user) {
 
-                if (err)
+                if (err) {
                     return done(err);
+                }
 
-                if (!user)
+                if (!user) {
                     return done(null, false, req.flash('loginMessage', 'No user found.'));
+                }
 
-                if (!user.validPassword(password))
+                if (!user.validPassword(password)) {
+
                     return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.'));
-
+                }
                 else
                     return done(null, user);
             });
@@ -64,10 +65,12 @@ module.exports = function(passport) {
         process.nextTick(function() {
 
             if (!req.user) {
-                User.findOne({ 'local.email' :  email }, function(err, user) {
 
-                    if (err)
+                User.findOne({ 'user.local.email' :  email }, function(err, user) {
+
+                    if (err) {
                         return done(err);
+                    }
 
                     if (user) {
                         return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
@@ -75,12 +78,14 @@ module.exports = function(passport) {
 
                         var newUser            = new User();
 
-                        newUser.local.email    = email;
-                        newUser.local.password = newUser.generateHash(password);
+                        newUser.user.local.email    = email;
+                        newUser.user.local.password = newUser.generateHash(password);
 
                         newUser.save(function(err) {
-                            if (err)
+                            if (err) {
+
                                 return done(err);
+                            }
 
                             return done(null, newUser);
                         });
@@ -88,9 +93,9 @@ module.exports = function(passport) {
 
                 });
 
-            } else if ( !req.user.local.email ) {
+            } else if ( !req.user.user.local.email ) {
 
-                User.findOne({ 'local.email' :  email }, function(err, user) {
+                User.findOne({ 'user.local.email' :  email }, function(err, user) {
                     if (err)
                         return done(err);
 
@@ -98,8 +103,8 @@ module.exports = function(passport) {
                         return done(null, false, req.flash('loginMessage', 'That email is already taken.'));
                     } else {
                         var user = req.user;
-                        user.local.email = email;
-                        user.local.password = user.generateHash(password);
+                        user.user.local.email = email;
+                        user.user.local.password = user.generateHash(password);
                         user.save(function (err) {
                             if (err)
                                 return done(err);

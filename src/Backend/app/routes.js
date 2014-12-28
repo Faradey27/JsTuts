@@ -1,5 +1,8 @@
 module.exports = function(app, passport) {
 
+    var db = require('./DataBaseUtils.js');
+    var dbUtils = new db();
+
 	app.get('/profile', isLoggedIn, function(req, res) {
 		res.render('profile.ejs', {
 			user : req.user
@@ -9,6 +12,20 @@ module.exports = function(app, passport) {
     app.get('/isLogin', function(req, res) {
         res.send(req.isAuthenticated());
     });
+
+    app.post('/isLogin', function(req, res) {
+        var sendData = {
+            isLogin: req.isAuthenticated(),
+            user: req.user
+        }
+        res.send(sendData);
+    });
+
+    app.post('/subscribeCourse', function(req, res) {
+        dbUtils.addCourseForUserByEmail(req.user.user.local.email, req.body);
+        res.send(req.body);
+    });
+
 
 	app.get('/logout', function(req, res) {
 		req.logout();

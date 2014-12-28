@@ -13,9 +13,9 @@ require('./ButtonComponent.less');
 
 var ButtonComponent = React.createClass({
 
-    onButtonClick() {
+    onButtonClick(data) {
         if (this.props.onClick) {
-            this.props.onClick();
+            this.props.onClick(data);
         }
     },
 
@@ -25,7 +25,7 @@ var ButtonComponent = React.createClass({
             <div className={"ButtonComponent" + this.props.class || ""}>
                 <ButtonToolbar>
                     <Button bsStyle={this.props.bsStyle}
-                            onClick={this.onButtonClick}>
+                            onClick={this.onButtonClick.bind(this, this.props.data)}>
                             {this.props.text}
                     </Button>
                 </ButtonToolbar>

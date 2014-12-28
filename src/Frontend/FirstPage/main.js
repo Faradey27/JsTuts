@@ -8,7 +8,7 @@ var React = require('react/addons');
 require('bootstrap/dist/css/bootstrap.css');
 
 $(document).ready(function(){
-    $.ajax({
+    /*$.ajax({
         type: 'GET',
         url: "/isLogin",
         error: function(e){
@@ -21,5 +21,6 @@ $(document).ready(function(){
                 React.renderComponent( UI({}), document.getElementById('content') );
             }
         }
-    });
+    });*/
+    React.renderComponent( UI({}), document.getElementById('content') );
 });

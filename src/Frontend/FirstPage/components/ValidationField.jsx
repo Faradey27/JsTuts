@@ -44,6 +44,7 @@ var ValidationField = React.createClass({
           bsStyle={this.validationState()}
           hasFeedback
           ref="field"
+          onKeyDown={this.props.onKeyDown}
           groupClassName="group-class"
           wrapperClassName="wrapper-class"
           labelClassName="label-class"
